@@ -6,7 +6,7 @@ csv_file = "energy_dataset.csv"  # Adjust if necessary
 
 
 print("🔹 Loading dataset...")
-df = pd.read_csv(csv_file)
+df = pd.read_csv(CSV_FILE)
 
 
 print("\n✅ Dataset Loaded Successfully! First 5 Rows:")
