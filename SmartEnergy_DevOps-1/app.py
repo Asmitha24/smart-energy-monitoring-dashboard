@@ -1,8 +1,9 @@
+# SmartEnergy_DevOps-1/app.py
 """Flask app for Smart Energy data visualization."""
-from flask import Flask, render_template, request, send_file
-import pandas as pd
 import sqlite3
 import io
+from flask import Flask, render_template, request, send_file
+import pandas as pd
 
 app = Flask(__name__)
 DB_PATH = "smart_energy.db"
