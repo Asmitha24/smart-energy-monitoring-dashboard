@@ -1,6 +1,6 @@
 """Tests for the Flask application."""
 import pytest
-from app import app  # Import your Flask app instance
+from SmartEnergy_DevOps-1.app import app   # Import your Flask app instance
 
 @pytest.fixture(name="test_client")
 def get_client():
