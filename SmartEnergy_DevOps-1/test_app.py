@@ -19,3 +19,15 @@ def test_index_route(get_client):
     response = get_client.get('/')
     assert response.status_code == 200
     assert b"<!DOCTYPE html>" in response.data
+
+def test_download_csv_route(get_client):
+    """
+    Test the download CSV route ('/download').
+    Checks for 200 status, correct content type, and filename.
+    """
+    response = get_client.get('/download')
+    assert response.status_code == 200
+    assert response.content_type == 'text/csv'
+    assert response.headers['Content-Disposition'] == (
+        'attachment; filename=filtered_energy_data.csv'
+    )
