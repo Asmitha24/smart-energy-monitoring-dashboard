@@ -1,8 +1,7 @@
 # store_data_sqlite.py
-
-import pandas as pd
+"""Module to store energy data into an SQLite database."""
 import sqlite3
-
+import pandas as pd
 # Load your actual dataset
 df = pd.read_csv('energy_dataset.csv')
 
