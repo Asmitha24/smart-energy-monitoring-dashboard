@@ -1,3 +1,4 @@
+"""Module for loading and cleaning energy data."""
 import pandas as pd
 
 
