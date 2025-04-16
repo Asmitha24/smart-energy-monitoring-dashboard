@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r SmartEnergy_DevOps-1/requirements.txt
+          pip install -r SmartEnergy_DevOps-1./requirements.txt
 
       - name: Lint with Pylint
         run: |
