@@ -2,7 +2,7 @@
 import pytest
 from app import app  # Import your Flask app instance
 
-@pytest.fixture
+@pytest.fixture(name="test_client")
 def client():
     """
     Fixture to create a test client for the Flask app.
@@ -11,21 +11,21 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_index_route(client):
+def test_index_route(test_client):
     """
     Test the main index route ('/').
     Checks for a 200 status code and expected content.
     """
-    response = client.get('/')
+    response = test_client.get('/')
     assert response.status_code == 200
     assert b"<!DOCTYPE html>" in response.data
 
-def test_download_csv_route(client):
+def test_download_csv_route(test_client):
     """
     Test the download CSV route ('/download').
     Checks for 200 status, correct content type, and filename.
     """
-    response = client.get('/download')
+    response = test_client.get('/download')
     assert response.status_code == 200
     assert response.content_type == 'text/csv'
     assert response.headers['Content-Disposition'] == (
