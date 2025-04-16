@@ -33,5 +33,5 @@ jobs:
       - name: Test with Pytest
         run: |
           pip install pytest
-          ls -la
+          cd SmartEnergy_DevOps-1
           pytest tests/
